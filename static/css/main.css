@@ -1,0 +1,147 @@
+/* Global Styling */
+/* Sets a global font and ensures padding and margin are reset */
+* {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Split layout for left and right sections */
+.split {
+  height: 100%; /* Makes both sections take full height */
+  width: 50%; /* Each section occupies half of the screen */
+  position: fixed; /* Fixes the sections for a split view */
+  z-index: 1; /* Ensures they stay on top */
+  top: 0; /* Starts at the top */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  padding: 20px;
+}
+
+.left {
+  left: 0; /* Positions the left section on the left */
+  background-color: #111; /* Dark background for contrast */
+  color: white; /* Ensures text is visible on dark background */
+}
+
+.right {
+  left: 50%; /* Positions the right section starting at the midpoint */
+  background-color: #f5f5f5; /* Light background for better readability */
+  color: #333; /* Dark text for contrast */
+  border-left: 2px solid #ddd; /* Adds a separator line between sections */
+  padding: 30px; /* Adds space around the content */
+  overflow-y: auto; /* Allows scrolling if content overflows */
+}
+
+/* Centering the image in the left section */
+.centered {
+  position: absolute; /* Ensures it's positioned relative to the parent */
+  top: 50%; /* Vertically centers the content */
+  left: 50%; /* Horizontally centers the content */
+  transform: translate(-50%, -50%); /* Centers the content accurately */
+  text-align: center;
+}
+
+.centered img {
+  max-width: 100%; /* Ensures the image does not overflow */
+  height: auto; /* Maintains the aspect ratio */
+  border-radius: 10px; /* Adds rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
+}
+
+/* Right-hand content container */
+.container {
+  margin-top: 20px; /* Adds spacing at the top */
+  margin-bottom: 20px; /* Adds spacing at the bottom */
+}
+
+/* Styling for sentiment labels */
+label {
+  display: block; /* Makes each label appear on a new line */
+  font-size: 18px; /* Slightly larger font for readability */
+  font-weight: bold; /* Highlights the importance of the labels */
+  margin-bottom: 10px; /* Adds spacing below each label */
+}
+
+/* Textarea styling */
+textarea {
+  width: 100%; /* Full width within the container */
+  height: 120px; /* Fixed height for the input */
+  margin: 15px 0; /* Adds spacing above and below */
+  padding: 12px 20px; /* Adds padding inside the input */
+  border: 2px solid #ccc; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #fff; /* White background for clarity */
+  font-size: 16px; /* Comfortable text size */
+  resize: none; /* Prevents resizing of the textarea */
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+}
+
+/* Submit button styling */
+input[type="submit"] {
+  display: block; /* Makes the button take its own line */
+  margin: 20px 0; /* Adds spacing above and below */
+  padding: 10px 20px; /* Adds padding for better clickability */
+  font-size: 16px; /* Comfortable font size */
+  color: white; /* White text for contrast */
+  background-color: #007bff; /* Blue background */
+  border: none; /* Removes border for a clean look */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Styling for the comments section */
+.coment-bottom {
+  background-color: #fff; /* White background for contrast */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Spacing inside the container */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  
+}
+
+.commented-section {
+  margin-bottom: 15px; /* Adds spacing between comments */
+  padding: 10px; /* Adds inner spacing for each comment */
+  border-bottom: 1px solid #ddd; /* Divider between comments 
+}
+
+.commented-section .text-nowrap {
+  font-size: 16px; /* Normal text size for comments */
+  color: #555; /* Subtle text color for better readability */
+}
+
+/* Styling for the horizontal line between comments */
+hr {
+  border: none; /* Removes the default border style */
+  height: 1px; /* Sets a thin line */
+  background-color: #ddd; /* Light gray color for separation */
+}
+
+/* Responsive design */
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+  .split {
+    width: 100%; /* Stacks sections vertically */
+    height: auto; /* Adjusts height to fit content */
+    position: relative; /* Removes fixed positioning */
+  }
+
+  .right {
+    left: 0; /* Aligns the right section with the left */
+    border-left: none; /* Removes the separator for small screens */
+    padding: 20px;
+  }
+
+  .centered {
+    position: relative; /* Makes it flow with the content */
+    transform: none; /* Removes centering transformation */
+    top: 0;
+    left: 0;
+    text-align: center; /* Centers the content on smaller screens */
+  }
+}
